@@ -32,3 +32,18 @@ class Main(Frame):
             if x > 400:
                 x = 10
                 y += 81
+
+    def logicalc(self, operation):
+        if operation == "C":
+            self.formula = ""
+        elif operation == "DEL":
+            self.formula = self.formula[0:-1]
+        elif operation == "X^2":
+            self.formula = str((eval(self.formula)) ** 2)
+        elif operation == "=":
+            self.formula = str(eval(self.formula))
+        else:
+            if self.formula == "0":
+                self.formula = ""
+            self.formula += operation
+        self.update()
