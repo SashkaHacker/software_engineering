@@ -47,3 +47,8 @@ class Main(Frame):
                 self.formula = ""
             self.formula += operation
         self.update()
+
+    def update(self):
+        if self.formula == "":
+            self.formula = "0"
+        self.lbl.configure(text=self.formula)
